@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Expo / build output
+build/
+dist/
+
+# iOS
+ios/Pods/
+*.xcuserstate
+
+# Android
+android/.gradle/
+android/build/
+*.keystore
+local.properties
+
+# Env / secrets
+.env
+.env.*
