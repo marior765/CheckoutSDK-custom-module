@@ -31,6 +31,7 @@ If you came from the article, **these patterns are the takeaway** — the Checko
 ## What's inside
 
 ```
+CheckoutComponentsSDK.podspec          # iOS SDK as a CocoaPod — kept at repo root, alongside checkout-module/
 checkout-module/
   src/                                 # JS/TS bridge + types + theming helper
     CheckoutModule.ts                  # requireNativeModule() typed surface
@@ -117,7 +118,7 @@ plugins: [
 ],
 ```
 
-> You also need the real `CheckoutComponentsSDK.podspec` somewhere in your repo for `withAddXcodeSourceFile` to copy. Adjust the source/destination paths inside that plugin to match where you keep it.
+> **Where the podspec lives:** `CheckoutComponentsSDK.podspec` is included at the **repo root, on the same level as `checkout-module/`** (not inside the module). `withAddXcodeSourceFile` is what copies it into the generated `ios/` folder so the Podfile can reference it. If you place it elsewhere, adjust the source path inside that plugin (it resolves the podspec relative to its own `__dirname`).
 
 #### Why these two don't need to be built
 
